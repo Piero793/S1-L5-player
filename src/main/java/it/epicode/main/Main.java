@@ -1,5 +1,6 @@
 package it.epicode.main;
 
+import it.epicode.colori.Colori;
 import it.epicode.interfacce.Luminosità;
 import it.epicode.interfacce.Play;
 import it.epicode.interfacce.Volume;
@@ -22,27 +23,25 @@ public class Main {
 
         Multimedia[] arrayMultimedia = {video, audio, video2, immagine, immagine2};
 
-        int scelta = -1;
-        System.out.println("-------------------------------------------------------------");
-        System.out.println("Benvenuto nel programma di gestione di elementi multimediale!");
-        System.out.println("-------------------------------------------------------------");
-
+        System.out.println(Colori.GIALLO.getCodice() + "-------------------------------------------------------------" + Colori.RESET.getCodice());
+        System.out.println(Colori.VERDE.getCodice() + "Benvenuto nel programma di gestione di elementi multimediali!" + Colori.RESET.getCodice());
+        System.out.println(Colori.GIALLO.getCodice() + "-------------------------------------------------------------" + Colori.RESET.getCodice());
 
         while (true) {
-            System.out.println("Seleziona l'elemento");
+            System.out.println(Colori.BLU.getCodice() + "Seleziona l'elemento" + Colori.RESET.getCodice());
             for (int i = 0; i < arrayMultimedia.length; i++) {
-                System.out.println(i + ": " + arrayMultimedia[i].toString());
+                System.out.println(Colori.VERDE.getCodice() + i + ": " + arrayMultimedia[i].toString() + Colori.RESET.getCodice());
             }
-            System.out.println("6: Esci dal programma");
+            System.out.println(Colori.ROSSO.getCodice() + "6: Esci dal programma" + Colori.RESET.getCodice());
             int indice = input.nextInt();
 
             if (indice == 6) {
-                System.out.println("Arrivederci!");
+                System.out.println(Colori.ROSSO.getCodice() + "Arrivederci!" + Colori.RESET.getCodice());
                 break;
             }
 
             if (indice < 0 || indice >= arrayMultimedia.length) {
-                System.out.println("Indice non valido!");
+                System.out.println(Colori.ROSSO.getCodice() + "Indice non valido!" + Colori.RESET.getCodice());
                 continue;
             }
 
@@ -50,12 +49,12 @@ public class Main {
 
             if (elemento instanceof Immagine) {
                 while (true) {
-                    System.out.println("Scegli un'opzione per l'immagine selezionata:");
-                    System.out.println("1. Aumenta luminosità");
-                    System.out.println("2. Diminuisci luminosità");
-                    System.out.println("3. Mostra immagine");
-                    System.out.println("4. Torna alla selezione dell'elemento");
-                    System.out.println("6. Esci dal programma");
+                    System.out.println(Colori.BLU.getCodice() + "Scegli un'opzione per l'immagine selezionata:" + Colori.RESET.getCodice());
+                    System.out.println(Colori.VERDE.getCodice() + "1. Aumenta luminosità" + Colori.RESET.getCodice());
+                    System.out.println(Colori.VERDE.getCodice() + "2. Diminuisci luminosità" + Colori.RESET.getCodice());
+                    System.out.println(Colori.VERDE.getCodice() + "3. Mostra immagine" + Colori.RESET.getCodice());
+                    System.out.println(Colori.GIALLO.getCodice() + "4. Torna alla selezione dell'elemento" + Colori.RESET.getCodice());
+                    System.out.println(Colori.ROSSO.getCodice() + "6. Esci dal programma" + Colori.RESET.getCodice());
                     int subScelta = input.nextInt();
 
                     switch (subScelta) {
@@ -69,82 +68,78 @@ public class Main {
                             ((Immagine) elemento).show();
                             break;
                         case 4:
-                            System.out.println("Torno alla selezione dell'elemento.");
+                            System.out.println(Colori.GIALLO.getCodice() + "Torno alla selezione dell'elemento." + Colori.RESET.getCodice());
                             break;
                         case 6:
-                            System.out.println("Arrivederci!");
+                            System.out.println(Colori.ROSSO.getCodice() + "Arrivederci!" + Colori.RESET.getCodice());
                             System.exit(0);
-                            break;
                         default:
-                            System.out.println("Scelta non valida!");
-                            break;
+                            System.out.println(Colori.ROSSO.getCodice() + "Scelta non valida!" + Colori.RESET.getCodice());
                     }
+
                     if (subScelta == 4) {
                         break;
                     }
                 }
             } else {
                 while (true) {
-                    System.out.println("Scegli un'opzione per l'elemento selezionato:");
-                    System.out.println("1. Aumenta luminosità");
-                    System.out.println("2. Diminuisci luminosità");
-                    System.out.println("3. Alza volume");
-                    System.out.println("4. Abbassa volume");
-                    System.out.println("5. Avvia l'elemento con le modifiche");
-                    System.out.println("6. Torna alla selezione dell'elemento");
-                    System.out.println("7. Esci dal programma");
+                    System.out.println(Colori.BLU.getCodice() + "Scegli un'opzione per l'elemento selezionato:" + Colori.RESET.getCodice());
+                    System.out.println(Colori.VERDE.getCodice() + "1. Aumenta luminosità" + Colori.RESET.getCodice());
+                    System.out.println(Colori.VERDE.getCodice() + "2. Diminuisci luminosità" + Colori.RESET.getCodice());
+                    System.out.println(Colori.VERDE.getCodice() + "3. Alza volume" + Colori.RESET.getCodice());
+                    System.out.println(Colori.VERDE.getCodice() + "4. Abbassa volume" + Colori.RESET.getCodice());
+                    System.out.println(Colori.VERDE.getCodice() + "5. Avvia l'elemento con le modifiche" + Colori.RESET.getCodice());
+                    System.out.println(Colori.GIALLO.getCodice() + "6. Torna alla selezione dell'elemento" + Colori.RESET.getCodice());
+                    System.out.println(Colori.ROSSO.getCodice() + "7. Esci dal programma" + Colori.RESET.getCodice());
                     int subScelta = input.nextInt();
 
                     switch (subScelta) {
-
                         case 1:
                             if (elemento instanceof Luminosità) {
                                 ((Luminosità) elemento).aumentaLuminosita();
                             } else {
-                                System.out.println("Nessun controllo sulla luminosità.");
+                                System.out.println(Colori.ROSSO.getCodice() + "Nessun controllo sulla luminosità." + Colori.RESET.getCodice());
                             }
                             break;
                         case 2:
                             if (elemento instanceof Luminosità) {
                                 ((Luminosità) elemento).diminuisciLuminosita();
                             } else {
-                                System.out.println("Nessun controllo sulla luminosità.");
+                                System.out.println(Colori.ROSSO.getCodice() + "Nessun controllo sulla luminosità." + Colori.RESET.getCodice());
                             }
                             break;
                         case 3:
                             if (elemento instanceof Volume) {
                                 ((Volume) elemento).alzaVolume();
                             } else {
-                                System.out.println("Nessun controllo sul volume.");
+                                System.out.println(Colori.ROSSO.getCodice() + "Nessun controllo sul volume." + Colori.RESET.getCodice());
                             }
                             break;
                         case 4:
                             if (elemento instanceof Volume) {
                                 ((Volume) elemento).abbassaVolume();
                             } else {
-                                System.out.println("Nessun controllo sul volume.");
+                                System.out.println(Colori.ROSSO.getCodice() + "Nessun controllo sul volume." + Colori.RESET.getCodice());
                             }
                             break;
                         case 5:
                             if (elemento instanceof Play) {
                                 ((Play) elemento).play();
                             } else {
-                                System.out.println("Questo elemento non può essere avviato.");
+                                System.out.println(Colori.ROSSO.getCodice() + "Questo elemento non può essere avviato." + Colori.RESET.getCodice());
                             }
                             break;
                         case 6:
-                            System.out.println("Torno alla selezione dell'elemento.");
+                            System.out.println(Colori.GIALLO.getCodice() + "Torno alla selezione dell'elemento." + Colori.RESET.getCodice());
                             break;
                         case 7:
-                            System.out.println("Arrivederci!");
+                            System.out.println(Colori.ROSSO.getCodice() + "Arrivederci!" + Colori.RESET.getCodice());
                             System.exit(0);
                             break;
                         default:
-                            System.out.println("Scelta non valida!");
-                            break;
-
-
+                            System.out.println(Colori.ROSSO.getCodice() + "Scelta non valida!" + Colori.RESET.getCodice());
                     }
+
                     if (subScelta == 6) {
                         break;
                     }
