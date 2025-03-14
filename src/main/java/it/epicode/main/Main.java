@@ -27,10 +27,10 @@ public class Main {
             for (int i = 0; i < arrayMultimedia.length; i++) {
                 System.out.println(i + ": " + arrayMultimedia[i].toString());
             }
-            System.out.println("0: Esci dal programma");
+            System.out.println("6: Esci dal programma");
             int indice = input.nextInt();
 
-            if (indice == 0) {
+            if (indice == 6) {
                 System.out.println("Arrivederci!");
                 break;
             }
@@ -49,7 +49,7 @@ public class Main {
                 System.out.println("3. Alza volume");
                 System.out.println("4. Abbassa volume");
                 System.out.println("5. Avvia l'elemento con le modifiche");
-                System.out.println("0. Esci dal programma");
+                System.out.println("6. Esci dal programma");
                 int subScelta = input.nextInt();
 
                 switch (subScelta) {
@@ -84,7 +84,7 @@ public class Main {
                     case 5:
                         elemento.play();
                         break;
-                    case 0:
+                    case 6:
                         System.out.println("Arrivederci!");
                         System.exit(0);
                         break;
