@@ -23,9 +23,13 @@ public class Main {
         Multimedia[] arrayMultimedia = {video, audio, video2, immagine, immagine2};
 
         int scelta = -1;
+        System.out.println("-------------------------------------------------------------");
+        System.out.println("Benvenuto nel programma di gestione di elementi multimediale!");
+        System.out.println("-------------------------------------------------------------");
+
 
         while (true) {
-            System.out.println("Seleziona l'elemento (da 0 a " + (arrayMultimedia.length - 1) + "):");
+            System.out.println("Seleziona l'elemento");
             for (int i = 0; i < arrayMultimedia.length; i++) {
                 System.out.println(i + ": " + arrayMultimedia[i].toString());
             }
@@ -92,6 +96,7 @@ public class Main {
                     int subScelta = input.nextInt();
 
                     switch (subScelta) {
+
                         case 1:
                             if (elemento instanceof Luminosità) {
                                 ((Luminosità) elemento).aumentaLuminosita();
@@ -137,6 +142,11 @@ public class Main {
                         default:
                             System.out.println("Scelta non valida!");
                             break;
+
+
+                    }
+                    if (subScelta == 6) {
+                        break;
                     }
                 }
             }
