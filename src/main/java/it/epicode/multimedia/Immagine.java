@@ -2,31 +2,27 @@ package it.epicode.multimedia;
 
 import it.epicode.interfacce.Luminosità;
 import it.epicode.interfacce.Show;
-import lombok.Data;
 
-@Data
-public class Immagine implements Luminosità, Show {
-    private String titolo;
-    private int luminosita;
+
+public class Immagine extends Multimedia implements Luminosità , Show {
+
 
     public Immagine(String titolo, int luminosita) {
-        this.titolo = titolo;
-        this.luminosita = luminosita;
+        super(titolo, luminosita);
     }
 
     @Override
     public void aumentaLuminosita() {
-
+        setLuminosita(getLuminosita() + 1);
     }
 
     @Override
     public void diminuisciLuminosita() {
-
+        setLuminosita(getLuminosita() - 1);
     }
 
     @Override
     public void show() {
-        //stampa il titolo concatenato a una sequenza di * di lunghezza pari alla luminosità
         System.out.println(getTitolo() + "*".repeat(getLuminosita()));
     }
 }

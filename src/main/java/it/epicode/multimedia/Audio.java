@@ -1,9 +1,9 @@
 package it.epicode.multimedia;
 
+import it.epicode.interfacce.Play;
 import it.epicode.interfacce.Volume;
-import lombok.Data;
 
-public class Audio extends Multimedia implements Volume {
+public class Audio extends Multimedia implements Volume, Play {
 
 
     public Audio(String titolo, int durata, int volume) {
